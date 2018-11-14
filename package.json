@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha server/**/*.test.js --timeout=3000",
+    "text-watch": "nodemon --exec \"npm test\""
   },
-  "engine": {
+  "engines": {
     "node": "10.4.1"
   },
   "author": "",
@@ -15,5 +16,10 @@
   "dependencies": {
     "express": "^4.16.4",
     "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "expect": "^23.6.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
   }
 }
